@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poemas de José Ondo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,serif}
+body{background:#1a0e12;color:#fff;padding:12px;padding-bottom:110px}
+.top{text-align:center;padding:10px}
+.top h1{color:#e8c872;font-size:34px;font-weight:normal}
+.top p{color:#e8b4b8;font-size:14px}
+.poema-card{border:1.5px solid #c9a94a;border-radius:12px;padding:16px;margin:12px 0;background:rgba(0,0,0,.35)}
+.poema-card h3{font-size:24px;font-weight:normal}
+.poema-card p{color:#e8b4b8;font-size:14px;margin-top:3px}
+.poema-text{display:none;background:#fff8ee;color:#4a1a2a;border-radius:10px;padding:14px;margin-top:12px;white-space:pre-line;line-height:1.8;font-size:17px}
+.poema-text.activo{display:block}
+.btn{border:1px solid #c9a94a;background:transparent;color:#e8c872;padding:9px 14px;border-radius:20px;cursor:pointer;font-size:14px;margin:8px 4px 0 0}
+.btn.pink{background:#e8a0a0;color:#fff;border:none}
+.btn.gold{background:#e8c872;color:#000;border:none;font-weight:bold}
+input,textarea,select{width:100%;padding:12px;margin:7px 0;border:1px solid #c9a94a;border-radius:10px;background:#2a1a20;color:#fff}
+audio{width:100%;margin-top:10px}
+.pub-box{border:2px solid #e8c872;background:#2a1a20;border-radius:14px;padding:16px;margin:12px 0}
+.pub-box h2{color:#e8c872;font-size:24px}
+.rosa-bottom{border:2px solid #e8c872;border-radius:14px;padding:16px;margin:20px 0;background:linear-gradient(180deg,#2a1a20,#1a0e12)}
+.rosa-bottom h2{color:#e8c872;font-size:24px}
+.saldo-num{font-size:34px;color:#fff;font-weight:bold;margin:8px 0}
+.agencias{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.agencias span{background:#fff;color:#4a1a2a;padding:7px 12px;border-radius:20px;font-size:13px;font-weight:bold}
+nav{position:fixed;bottom:0;left:0;right:0;background:#1a0e12;display:flex;justify-content:space-around;padding:14px;border-top:1px solid #c9a94a}
+nav a{color:#e8c872;text-decoration:none;font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="top">
+<h1>Todos mis poemas</h1>
+<p>— Poemas de José Ondo Ndong Nchama —<br>Un sol que brilla en África</p>
+</div>
+
+<div class="pub-box">
+<h2>📣 PUBLICAR MI POEMA</h2>
+<p>Publica en todo el mundo, con y sin internet</p>
+<select id="pais"><option>España</option><option>México</option><option>Colombia</option><option>Argentina</option><option>USA</option><option>Guinea Ecuatorial</option></select>
+<select><option>TikTok</option><option>Instagram</option><option>Facebook</option><option>YouTube</option><option>WhatsApp</option></select>
+<br>
+<button class="btn gold" onclick="document.getElementById('pubMsg').innerText='✅ Publicado en '+document.getElementById('pais').value">🚀 PUBLICAR AHORA</button>
+<button class="btn" onclick="document.getElementById('pubMsg').innerText='⏰ Programado'">⏰ Programar</button>
+<button class="btn" onclick="document.getElementById('pubMsg').innerText='💾 Guardado sin internet'">💾 Guardar sin internet</button>
+<p id="pubMsg" style="color:#e8c872;margin-top:10px"></p>
+</div>
+
+<div style="text-align:center;color:#e8c872;font-size:22px;margin:14px 0">🌹 Antología Poética - Cuatro Poemas 🌹</div>
+
+<!-- POEMA 1 -->
+<div class="poema-card">
+<h3>1. Si me adivinaras</h3><p>poema de amor tímido</p>
+<div id="p1" class="poema-text activo">SI ME ADIVINARAS
+
+Siempre quise decirtelo
+pero me ahogo de la saliva
+cuando intento hablar contigo.
+
+Me siento vacio,
+como si fuera nada,
+y cuando te veo siento que tu eres mucho.
+
+Hablar contigo
+es como pedirle a Dios
+que me diera el poder de Jesucristo,
+y no me lo da.
+
+Me duele la garganta de callarme,
+me arde por dentro,
+y solo quisiera que me adivinaras
+y vinieras directamente hacia mi.</div>
+<button class="btn" onclick="ver('p1')">📖 Leer</button>
+<button class="btn gold" onclick="escucharVoz('p1')">🎧 Escuchar con MI VOZ</button>
+<button class="btn" onclick="document.getElementById('file-p1').click()">🔄 Volver a subir audio</button>
+<input type="file" id="file-p1" accept="audio/*" style="display:none" onchange="subirAudio('p1',this)">
+<audio id="audio-p1" controls></audio>
+<p style="color:#e8c872;font-size:13px">Tu voz guardada. Si quieres cambiarla, toca Volver a subir audio.</p>
+<button class="btn pink" onclick="comprar(15)">🛍️ Comprar - 15 RM</button>
+</div>
+
+<!-- POEMA 2 -->
+<div class="poema-card">
+<h3>2. Quien soy yo</h3><p>poema de identidad</p>
+<div id="p2" class="poema-text">QUIEN SOY YO
+
+Soy el fruto sabroso que nunca se comio
+Naci sin que el mundo se diera cuenta
+Creci como el reflejo del amor y el odio
+Me transforme en la sardina que se comio al tiburon
+Engendre y mi ser se aparto de mi
+Me mostre ante el mundo y me transformaron
+en un pecado que nadie quiso cometer
+Vi una luz pero se apago cuando descubri que
+la moneda tenia dos caras
+De ti y de mi la escucho
+Quien eres..
+Simplemente soy el ser muerto que nunca vivio.</div>
+<button class="btn" onclick="ver('p2')">📖 Leer</button>
+<button class="btn gold" onclick="escucharVoz('p2')">🎧 Escuchar con MI VOZ</button>
+<button class="btn" onclick="document.getElementById('file-p2').click()">🔄 Volver a subir audio</button>
+<input type="file" id="file-p2" accept="audio/*" style="display:none" onchange="subirAudio('p2',this)">
+<audio id="audio-p2" controls></audio>
+<button class="btn pink" onclick="comprar(15)">🛍️ Comprar - 15 RM</button>
+</div>
+
+<!-- POEMA 3 -->
+<div class="poema-card">
+<h3>3. Como aman en el cinema</h3><p>poema romántico</p>
+<div id="p3" class="poema-text">COMO AMAN EN EL CINEMA
+
+Te quiero pero no es para mi
+y no admitirlo me doleria mas.
+Cada segundo pienso en ti.
+Si la belleza tuviera un nombre seria el tuyo.
+Yo recorri todos los paises buscando algo mejor,
+viaje en todos los rincones del mundo pero no encontre nada.
+Y entonces me di cuenta de la belleza que se va perdiendo.
+Quiero que me ames como aman en el cinema.
+Porque mi amor por ti es mas que la resurreccion del mismo Cristo.
+Te quiero.</div>
+<button class="btn" onclick="ver('p3')">📖 Leer</button>
+<button class="btn gold" onclick="escucharVoz('p3')">🎧 Escuchar con MI VOZ</button>
+<button class="btn" onclick="document.getElementById('file-p3').click()">🔄 Volver a subir audio</button>
+<input type="file" id="file-p3" accept="audio/*" style="display:none" onchange="subirAudio('p3',this)">
+<audio id="audio-p3" controls></audio>
+<button class="btn pink" onclick="comprar(15)">🛍️ Comprar - 15 RM</button>
+</div>
+
+<!-- POEMA 4 -->
+<div class="poema-card">
+<h3>4. El Nombre</h3><p>El Nombre</p>
+<div id="p4" class="poema-text">EL NOMBRE
+
+Tu nombre es mi poema favorito.
+Lo guardo en mi boca como una rosa.</div>
+<button class="btn" onclick="ver('p4')">📖 Leer</button>
+<button class="btn gold" onclick="escucharVoz('p4')">🎧 Escuchar con MI VOZ</button>
+<button class="btn" onclick="document.getElementById('file-p4').click()">🔄 Volver a subir audio</button>
+<input type="file" id="file-p4" accept="audio/*" style="display:none" onchange="subirAudio('p4',this)">
+<audio id="audio-p4" controls></audio>
+<button class="btn pink" onclick="comprar(15)">🛍️ Comprar - 15 RM</button>
+</div>
+
+<!-- POEMA 5 -->
+<div class="poema-card">
+<h3>5. La noche en Bata</h3><p>poema de la noche</p>
+<div id="p5" class="poema-text">LA NOCHE EN BATA
+
+La noche en Bata huele a mar y a poema.
+Tu recuerdo brilla como un sol que no se apaga.</div>
+<button class="btn" onclick="ver('p5')">📖 Leer</button>
+<button class="btn gold" onclick="escucharVoz('p5')">🎧 Escuchar con MI VOZ</button>
+<button class="btn" onclick="document.getElementById('file-p5').click()">🔄 Volver a subir audio</button>
+<input type="file" id="file-p5" accept="audio/*" style="display:none" onchange="subirAudio('p5',this)">
+<audio id="audio-p5" controls></audio>
+<button class="btn pink" onclick="comprar(15)">🛍️ Comprar - 15 RM</button>
+</div>
+
+<div class="poema-card">
+<h3>✍️ Crear poema</h3>
+<input id="titulo" placeholder="Título">
+<textarea id="texto" rows="3" placeholder="Escribe tu poema..."></textarea>
+<button class="btn pink" onclick="guardar()">Guardar poema</button>
+<p id="guardado" style="color:#e8c872"></p>
+</div>
+
+<div class="poema-card">
+<h3>💖 Poema personalizado con TU VOZ</h3>
+<input placeholder="Nombre de la persona">
+<textarea placeholder="¿Qué quieres decirle?"></textarea>
+<button class="btn pink" onclick="comprar(25)">Pedir poema + Tu voz - 25 RM</button>
+</div>
+
+<div class="poema-card">
+<h3>🌹 Biografía</h3>
+<p>José Ondo Ndong Nchama es poeta, narrador y voz contemporánea de Guinea Ecuatorial. "Un sol que brilla en África" es su sello poético, íntimo y luminoso.</p>
+</div>
+
+<!-- ROSA MONEY ABAJO - RECOMPENSAS / SALDO / SUELDO -->
+<div class="rosa-bottom">
+<h2>🌹 Rosa Money - Mis recompensas</h2>
+<p style="color:#e8b4b8">Agencia donde yo recibo mi dinero</p>
+<div class="saldo-num"><span id="saldo">0</span> RM</div>
+<p>💰 Mi saldo: <b id="saldo2">0 RM</b></p>
+<p>💼 Mi sueldo: <b id="sueldo">0 RM</b></p>
+<p>🎁 Mis recompensas: <b id="recompensa">0 RM</b></p>
+<p style="margin-top:10px">Agencias para mis clientes:</p>
+<div class="agencias">
+<span>🌹 Rosa Money</span>
+<span>💛 Western Union</span>
+<span>❤️ MoneyGram</span>
+<span>🧡 Orange Money</span>
+<span>💙 MTN MoMo</span>
+<span>❤️ Airtel Money</span>
+<span>💚 Wave</span>
+</div>
+<button class="btn gold" onclick="alert('Elige tu agencia: Rosa Money, Western Union, MoneyGram, Orange Money, MTN MoMo')">Cambiar agencia de cobro</button>
+</div>
+
+<nav><a>🏠<br>Inicio</a><a>📖<br>Poemas</a><a>📣<br>Publicar</a><a>🌹<br>Rosa Money</a></nav>
+
+<script>
+let saldo=0;
+function ver(id){
+  document.querySelectorAll('.poema-text').forEach(p=>p.classList.remove('activo'));
+  document.getElementById(id).classList.add('activo');
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function subirAudio(id, input){
+  let file=input.files[0];
+  if(!file) return;
+  let url=URL.createObjectURL(file);
+  let a=document.getElementById('audio-'+id);
+  a.src=url;
+  a.play();
+  alert('✅ Tu voz guardada en este poema. Ahora Escuchar suena con TU VOZ.');
+}
+function escucharVoz(id){
+  let a=document.getElementById('audio-'+id);
+  if(!a.src || a.src==''){
+    alert('⚠️ Aún no has subido tu audio para este poema. Toca "Volver a subir audio" y sube tu voz leyendo este poema.');
+    document.getElementById('file-'+id).click();
+    return;
+  }
+  a.play();
+  ver(id);
+}
+function comprar(precio){
+  let agencia=prompt('¿Con qué agencia paga el cliente? Rosa Money, Western Union, MoneyGram, Orange Money, MTN MoMo, Airtel Money');
+  if(!agencia) return;
+  saldo+=precio;
+  document.getElementById('saldo').innerText=saldo;
+  document.getElementById('saldo2').innerText=saldo+' RM';
+  document.getElementById('sueldo').innerText=saldo+' RM';
+  document.getElementById('recompensa').innerText=saldo+' RM';
+  alert('✅ Venta de '+precio+' RM recibida por '+agencia+'. Tu saldo ahora es '+saldo+' RM. Lo ves abajo en Rosa Money.');
+}
+function guardar(){
+  let t=document.getElementById('titulo').value||'Sin título';
+  localStorage.setItem('poema_'+t, document.getElementById('texto').value);
+  document.getElementById('guardado').innerText='✅ Poema "'+t+'" guardado sin internet.';
+}
+</script>
+</body>
+</html>
